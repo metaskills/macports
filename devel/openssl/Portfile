@@ -1,0 +1,102 @@
+# $Id: Portfile 65260 2010-03-24 21:01:30Z mww@macports.org $
+
+PortSystem 1.0
+PortGroup  muniversal 1.0
+
+name			openssl
+version			0.9.8n
+epoch			1
+platforms		darwin freebsd
+categories		devel security
+maintainers		mww
+homepage		http://www.openssl.org/
+license			BSD
+description		OpenSSL SSL/TLS cryptography library
+
+long_description \
+	The OpenSSL Project is a collaborative effort to develop a robust, \
+	commercial-grade, full-featured, and Open Source toolkit implementing \
+	the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security \
+	(TLS v1) protocols as well as a full-strength general purpose \
+	cryptography library.
+
+master_sites	http://www.openssl.org/source/
+checksums           md5     076d8efc3ed93646bd01f04e23c07066 \
+                    sha1    595f5ebf592568515964f0adc62239e7012ef08b \
+                    rmd160  8eb5e877c2bab203e8eb108e42d60580a478f718
+
+depends_lib		port:zlib
+
+platform darwin {
+	patchfiles	patch-Makefile.org.diff patch-crypto-Makefile.diff
+}
+
+configure.cmd	./config
+configure.args	-L${prefix}/lib --openssldir=${prefix}/etc/openssl zlib no-asm no-krb5 shared
+configure.ccache	no
+
+variant rfc3779 description {enable RFC 3779: X.509 Extensions for IP Addresses and AS Identifiers} {
+	configure.args-append	enable-rfc3779
+}
+
+use_parallel_build	no
+
+destroot.destdir	INSTALL_PREFIX=${destroot}
+destroot.args		MANDIR=${prefix}/share/man
+
+test.run		yes
+
+livecheck.type	regex
+livecheck.url	${master_sites}
+livecheck.regex	${name}-(0.9.8\[a-z\])
+
+post-patch {
+	# Ensure that the correct compiler is used
+	reinplace "s|cc:|${configure.cc}:|" ${worksrcpath}/Configure
+}
+
+array set merger_configure_args {
+	ppc     darwin-ppc-cc
+	i386    darwin-i386-cc
+	ppc64   darwin64-ppc-cc
+	x86_64  darwin64-x86_64-cc
+}
+
+if { [variant_isset universal] } {
+	configure.cmd	./Configure
+
+	post-patch {
+        # For universal builds on ppc tiger, add sysroot
+        if {${os.arch} == "powerpc" && ${os.major} == "8"} {
+            reinplace "s|\\(-arch \[_a-zA-Z0-9\]*\\)|\\1 -isysroot ${developer_dir}/SDKs/MacOSX10.4u.sdk|" ${worksrcpath}/Configure
+        }
+	}
+
+	set merger_arch_compiler "no"
+
+	configure.universal_args-delete --disable-dependency-tracking
+	configure.args-delete  --disable-dependency-tracking
+
+	pre-destroot {
+		global merger_dont_diff
+		if { [llength ${universal_archs_to_use}] > 2 } {
+			lappend merger_dont_diff ${prefix}/include/openssl/opensslconf.h
+		}
+	}
+
+	# Do not set --host.
+	array set merger_host {
+		ppc     ""
+		i386    ""
+		ppc64   ""
+		x86_64  ""
+	}
+} elseif {[info exists build_arch] && [info exists merger_configure_args($build_arch)]} {
+    configure.cmd           ./Configure
+    configure.args-append   $merger_configure_args($build_arch)
+}
+
+# the test suite can only be run *after* destrooting
+#    test.run            yes
+#    test.dir            ${worksrcpath}/test
+#    test.target         alltests
