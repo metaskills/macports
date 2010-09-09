@@ -1,0 +1,14 @@
+
+= MetaSkills MacPorts repository
+
+You can learn about setting up your own MacPorts repos at the following links.
+
+  http://trac.macports.org/wiki/howto/InstallingOlderPort
+  http://journal.bitshaker.com/articles/2007/10/20/install-old-versions-of-ports-using-macports/
+
+In short, I added this to my /opt/local/etc/macports/sources.conf file.
+
+  file:///Users/kencollins/Repositories/macports [nosync]
+
+Now run the `portindex` command while in that directory to pick up on changes to your own Portfiles.
+
