@@ -12,3 +12,9 @@ In short, I added this to my /opt/local/etc/macports/sources.conf file.
 
 Now run the `portindex` command while in that directory to pick up on changes to your own Portfiles.
 
+
+= My FreeTDS Notes
+
+  * Installed - freetds @0.82_0+odbc+production (active)
+  * $ sudo port install freetds@0.83.dev.20110125
+
