@@ -3,7 +3,7 @@
 PortSystem          1.0
 
 name                freetds
-version             0.83.dev.20110125
+version             0.83.dev.20110306
 categories          databases
 platforms           darwin
 maintainers         nomaintainer
@@ -24,7 +24,7 @@ homepage            http://www.freetds.org/
 master_sites        ftp://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/current/
 distfiles           freetds-current.tgz
 
-checksums           md5     652bd71363cfec3a4bf834e88694d934
+checksums           md5     a6c8fab468d418328f9dbc6ad80cf9f6
 
 depends_build       port:libtool
 
@@ -100,6 +100,15 @@ variant odbcwide description {Enable odbc wide experimentaal} {
   depends_lib-append port:unixODBC
   configure.args-append --with-unixodbc=${prefix} \
                         --enable-odbc-wide
+}
+
+variant noodbc description {No odbc driver manager} {
+    configure.args-append --disable-odbc
+}
+
+variant openssl description {Use openssl} {
+    depends_lib-append port:openssl
+    configure.args-append --with-openssl=${prefix}
 }
 
 
