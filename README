@@ -15,6 +15,6 @@ Now run the `portindex` command while in that directory to pick up on changes to
 
 = My FreeTDS Notes
 
-  * $ sudo port deactivate freetds@0.82_0
-  * $ sudo port install freetds@0.83.dev.20110309+noodbc+openssl
+  * $ sudo port deactivate freetds@0.82_0+odbc
+  * $ sudo port install freetds@0.83.dev.20110314+noodbc+openssl
 
