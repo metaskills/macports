@@ -1,4 +1,5 @@
-# $Id: Portfile 2 2010-09-10 08:16:41Z ken@metaskills.net $
+# $Id: Portfile 2 2011-03-24 08:16:41Z ken@metaskills.net $
+# curl http://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/current/freetds-current.tgz | md5
 
 PortSystem          1.0
 
