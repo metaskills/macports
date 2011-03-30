@@ -19,5 +19,5 @@ Now run the `portindex` command while in that directory to pick up on changes to
   
   freetds@0.82_0
   freetds@0.83.dev.20110306_0+noodbc+openssl
-  freetds@0.83.dev.20110314_0+mssql+noodbc+openssl
+  freetds@0.83.dev.20110314_0+noodbc+openssl+nodebug
 

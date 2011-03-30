@@ -1,4 +1,4 @@
-# $Id: Portfile 2 2011-03-27 08:16:41Z ken@metaskills.net $
+# $Id: Portfile 2 2011-03-29 08:16:41Z ken@metaskills.net $
 # curl http://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/current/freetds-current.tgz | md5
 
 PortSystem          1.0
@@ -91,6 +91,10 @@ post-activate {
 
 variant mssql description {Use MS style dblib} {
     configure.args-append --enable-msdblib --with-tdsver=8.0
+}
+
+variant nodebug description {Disable debug} {
+    configure.args-append --disable-debug
 }
 
 variant odbc description {Build odbc driver against unixODBC} {
