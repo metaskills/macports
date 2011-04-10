@@ -1,10 +1,9 @@
-# $Id: Portfile 2 2011-03-29 08:16:41Z ken@metaskills.net $
-# curl http://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/current/freetds-current.tgz | md5
+# $Id: Portfile 2 2011-04-09 10:02:41Z ken@metaskills.net $
 
 PortSystem          1.0
 
 name                freetds
-version             0.83.dev.20110314
+version             0.91.dev.20110409RC1
 categories          databases
 platforms           darwin
 maintainers         nomaintainer
@@ -22,11 +21,10 @@ long_description    FreeTDS is an open source implementation of the TDS (Tabular
                     portions of the JDBC 2 API.
 
 homepage            http://www.freetds.org/
-master_sites        http://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/current/
-distfiles           freetds-current.tgz
-patchfiles	        patch-defaultdb.diff
+master_sites        http://www.ibiblio.org/pub/Linux/ALPHA/freetds/stable/release_candidates/
+distfiles           freetds-0.91rc1.tgz
 
-checksums           md5     6ee5df5592b116785cd4df46c6e8eb83
+checksums           md5     aec7ab3c9d063afdef6091959c6056fd
 
 depends_build       port:libtool
 
@@ -38,10 +36,6 @@ configure.args      --mandir=${prefix}/share/man \
                     --includedir=${prefix}/include/${name} \
                     --sysconfdir=${prefix}/etc/${name} \
                     --with-libiconv-prefix=${prefix}
-
-pre-fetch {
-  file delete ${distpath}/freetds-current.tgz
-}
 
 post-patch {
     reinplace "s|../replacements/libreplacements.la||g" \
