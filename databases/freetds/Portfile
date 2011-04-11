@@ -1,4 +1,4 @@
-# $Id: Portfile 2 2011-04-11 10:02:41Z ken@metaskills.net $
+# $Id: Portfile 2 2011-04-11 10:03:00Z ken@metaskills.net $
 
 PortSystem          1.0
 
@@ -32,12 +32,13 @@ depends_lib         port:libiconv \
                     port:ncurses \
                     port:readline
 
-# patchfiles          patch-xyx.diff
+# patchfiles          patch-xyz.diff
 
 configure.args      --mandir=${prefix}/share/man \
                     --includedir=${prefix}/include/${name} \
                     --sysconfdir=${prefix}/etc/${name} \
-                    --with-libiconv-prefix=${prefix}
+                    --with-libiconv-prefix=${prefix} \
+                    --with-tdsver=7.1
 
 pre-fetch {
     file delete ${distpath}/freetds-current.tgz
