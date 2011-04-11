@@ -16,7 +16,7 @@ Now run the `portindex` command while in that directory to pick up on changes to
 = My FreeTDS Notes
 
   * deactivate, activate, install
-  
-  freetds@0.82_0
-  freetds@0.91.dev.20110409RC1+noodbc+openssl+nodebug
+  * freetds@0.82_0
+  * freetds@0.92.dev.20110410+noodbc+openssl
+  * freetds@0.92.dev.20110410+noodbc+openssl+nodebug
 

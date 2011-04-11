@@ -1,9 +1,9 @@
-# $Id: Portfile 2 2011-04-09 10:02:41Z ken@metaskills.net $
+# $Id: Portfile 2 2011-04-10 10:02:41Z ken@metaskills.net $
 
 PortSystem          1.0
 
 name                freetds
-version             0.91.dev.20110409RC1
+version             0.92.dev.20110410
 categories          databases
 platforms           darwin
 maintainers         nomaintainer
@@ -21,10 +21,10 @@ long_description    FreeTDS is an open source implementation of the TDS (Tabular
                     portions of the JDBC 2 API.
 
 homepage            http://www.freetds.org/
-master_sites        http://www.ibiblio.org/pub/Linux/ALPHA/freetds/stable/release_candidates/
-distfiles           freetds-0.91rc1.tgz
+master_sites        http://www.ibiblio.org/pub/Linux/ALPHA/freetds/current/
+distfiles           freetds-current.tgz
 
-checksums           md5     aec7ab3c9d063afdef6091959c6056fd
+checksums           md5     b9f4b0f794f1d85fc5c8e9e0b1fc9ef7
 
 depends_build       port:libtool
 
