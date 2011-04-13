@@ -1,9 +1,9 @@
-# $Id: Portfile 2 2011-04-11 10:03:00Z ken@metaskills.net $
+# $Id: Portfile 2 2011-04-12 10:03:00Z ken@metaskills.net $
 
 PortSystem          1.0
 
 name                freetds
-version             0.92.dev.20110410
+version             0.92.dev.20110412
 categories          databases
 platforms           darwin
 maintainers         nomaintainer
