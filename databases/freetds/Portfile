@@ -1,9 +1,9 @@
-# $Id: Portfile 2 2011-04-12 10:03:00Z ken@metaskills.net $
+# $Id: Portfile 2 2011-04-24 10:03:00Z ken@metaskills.net $
 
 PortSystem          1.0
 
 name                freetds
-version             0.92.dev.20110415
+version             0.92.dev.20110424
 categories          databases
 platforms           darwin
 maintainers         nomaintainer
@@ -24,7 +24,7 @@ homepage            http://www.freetds.org/
 master_sites        http://www.ibiblio.org/pub/Linux/ALPHA/freetds/current/
 distfiles           freetds-current.tgz
 
-checksums           md5     e2a08c5d9e752e73e71da2ba082f97f2
+checksums           md5     e5f93e6db0939e152be261182da2c21e
 
 depends_build       port:libtool
 
