@@ -3,7 +3,7 @@
 PortSystem          1.0
 
 name                freetds
-version             0.92.dev.20110426
+version             0.92.dev.20110509
 categories          databases
 platforms           darwin
 maintainers         nomaintainer
@@ -24,7 +24,7 @@ homepage            http://www.freetds.org/
 master_sites        http://www.ibiblio.org/pub/Linux/ALPHA/freetds/current/
 distfiles           freetds-current.tgz
 
-checksums           md5 3f9d40041370113776d15877f41c5caf
+checksums           md5 877d8ca47a38775b95cb4e6b4b8bd4bf
 
 depends_build       port:libtool
 
