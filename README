@@ -13,12 +13,18 @@ In short, I added this to my /opt/local/etc/macports/sources.conf file.
 Now run the `portindex` command while in that directory to pick up on changes to your own Portfiles.
 
 
+= My Oracle 64-bit Notes (11.2.0.3.0)
+
+This Portfile only focuses on x86_64 for intel. It also installs the sqlplus package. Even though it does fix pre-built libraries using `otool` and `install_name_tool`, you still have to use `DYLD_LIBRARY_PATH`. Just follow the notes in the post install message.
+  
+  * sudo port install oracle-instantclient @11.2.0.3.0 +universal
+
+
 = My FreeTDS Notes
 
   * deactivate, activate, install
   * freetds@0.82_0
   * freetds@0.91 +odbc +openssl
-
 
 
 = My ImageMagic v6.6.2 Notes
