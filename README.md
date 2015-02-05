@@ -18,7 +18,7 @@ Now run the `portindex` command while in that directory to pick up on changes to
 # My Oracle 64-bit Notes (11.2.0.3.0)
 
 This Portfile only focuses on x86_64 for intel. It also installs the sqlplus package. Even though it does fix pre-built libraries using `otool` and `install_name_tool`, you still have to use `DYLD_LIBRARY_PATH`. Just follow the notes in the post install message.
-  
+
 * sudo port install oracle-instantclient @11.2.0.3.0 +universal
 
 
@@ -50,7 +50,7 @@ ImageMagick: update to 6.6.2-9; see #25457
 
 Now make it in out own port index.
 
-```shell  
+```shell
 $ mkdir graphics
 $ svn co  -r 69223 'http://svn.macports.org/repository/macports/trunk/dports/graphics/ImageMagick/' graphics/ImageMagick
 $ portindex

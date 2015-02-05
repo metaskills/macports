@@ -80,6 +80,16 @@ variant iodbc conflicts odbc description {Build odbc driver against iODBC} {
     configure.args-append --with-iodbc=${prefix}
 }
 
+variant openssl conflicts gnutls description {Enable SSL with OpenSSL} {
+    depends_lib-append port:openssl
+    configure.args-append --with-openssl=${prefix}
+}
+
+variant gnutls conflicts openssl description {Enable SSL with GnuTLS}  {
+    depends_lib-append port:gnutls
+    configure.args-append --with-gnutls
+}
+
 livecheck.type      regex
 livecheck.url       [lindex ${master_sites} 0]
 livecheck.regex     ${name}-(0\\.91\\.\\d+)${extract.suffix}
