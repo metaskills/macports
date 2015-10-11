@@ -15,6 +15,14 @@ file:///Users/kencollins/Repositories/macports [nosync]
 Now run the `portindex` command while in that directory to pick up on changes to your own Portfiles.
 
 
+# Generating Checksum Examples
+
+```
+$ shasum -a 256 /Users/kencollins/Desktop/freetds-0.91.112.tar.gz
+$ openssl sha1 /Users/kencollins/Desktop/freetds-0.91.112.tar.gz
+$ openssl rmd160 /Users/kencollins/Desktop/freetds-0.91.112.tar.gz
+```
+
 # My Oracle 64-bit Notes (11.2.0.3.0)
 
 This Portfile only focuses on x86_64 for intel. It also installs the sqlplus package. Even though it does fix pre-built libraries using `otool` and `install_name_tool`, you still have to use `DYLD_LIBRARY_PATH`. Just follow the notes in the post install message.
