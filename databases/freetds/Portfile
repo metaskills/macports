@@ -36,7 +36,8 @@ depends_lib         port:libiconv \
 
 configure.args      --includedir=${prefix}/include/${name} \
                     --sysconfdir=${prefix}/etc/${name} \
-                    --with-libiconv-prefix=${prefix}
+                    --with-libiconv-prefix=${prefix} \
+                    --with-tdsver=7.1
 
 use_parallel_build  yes
 
