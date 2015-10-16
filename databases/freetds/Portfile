@@ -5,7 +5,8 @@ PortSystem          1.0
 
 name                freetds
 epoch               1
-version             0.91.112
+version             0.95.20
+revision            1
 categories          databases
 platforms           darwin
 maintainers         nomaintainer
@@ -27,8 +28,8 @@ long_description    FreeTDS is an open source implementation of the TDS (Tabular
 homepage            http://www.freetds.org/
 master_sites        ftp://ftp.freetds.org/pub/${name}/stable/
 
-checksums           rmd160  1fd4dbadac1465dfe24ab95f6ebcd10f2ccc2444 \
-                    sha256  be4f04ee57328c32e7e7cd7e2e1483e535071cec6101e46b9dd15b857c5078ed
+checksums           rmd160  d7bbae7deea356b43d774c4e9fa5f52b026919a2 \
+                    sha256  9d47070b4de118d05194df2a88211f817b7802be630d0f2393fa62ce558fa4d2
 
 depends_lib         port:libiconv \
                     port:ncurses \
@@ -47,7 +48,7 @@ post-destroot {
         file rename ${destroot}${prefix}/etc/freetds/${file} ${destroot}${prefix}/etc/freetds/${file}.sample
     }
 
-    file rename ${destroot}${prefix}/share/doc/${name}-${version} \
+    file rename ${destroot}/../${name}-${version}/doc \
         ${destroot}${prefix}/share/doc/${name}
 }
 
@@ -91,6 +92,3 @@ variant gnutls conflicts openssl description {Enable SSL with GnuTLS}  {
     configure.args-append --with-gnutls
 }
 
-livecheck.type      regex
-livecheck.url       [lindex ${master_sites} 0]
-livecheck.regex     ${name}-(0\\.91\\.\\d+)${extract.suffix}
