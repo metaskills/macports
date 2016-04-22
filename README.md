@@ -34,8 +34,10 @@ This Portfile only focuses on x86_64 for intel. It also installs the sqlplus pac
 
 * deactivate, activate, install
 * freetds@0.82_0
-* freetds@0.91 +odbc +openssl
-* freetds +odbc +openssl
+
+```
+$ sudo port install freetds@1.0rc1_1 +openssl
+```
 
 
 # My ImageMagic v6.6.2 Notes
