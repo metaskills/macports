@@ -18,9 +18,9 @@ Now run the `portindex` command while in that directory to pick up on changes to
 # Generating Checksum Examples
 
 ```
-$ shasum -a 256 /Users/kencollins/Desktop/freetds-0.91.112.tar.gz
-$ openssl sha1 /Users/kencollins/Desktop/freetds-0.91.112.tar.gz
-$ openssl rmd160 /Users/kencollins/Desktop/freetds-0.91.112.tar.gz
+$ shasum -a 256 /Users/kencollins/Desktop/freetds-
+$ openssl sha1 /Users/kencollins/Desktop/freetds-
+$ openssl rmd160 /Users/kencollins/Desktop/freetds-
 ```
 
 # My Oracle 64-bit Notes (11.2.0.3.0)

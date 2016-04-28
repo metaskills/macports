@@ -5,7 +5,7 @@ PortSystem          1.0
 
 name                freetds
 epoch               1
-version             1.0rc2
+version             1.0rc3
 revision            1
 categories          databases
 platforms           darwin
@@ -32,8 +32,8 @@ master_sites        ftp://ftp.freetds.org/pub/${name}/stable/release_candidates
 # extract.suffix      tar.bz2
 distfiles           ${name}-${version}.tar.bz2
 
-checksums           rmd160  2ddba45231d84c889a5377c739f2eb99d4cffee5 \
-                    sha256  0f1d30b1ee43ac521cbab2538ebc3dc84e475f6b3cc284ef0b7878bd44726d6b
+checksums           rmd160  94d013e05be3e495e440ecf46e5882146a433b47 \
+                    sha256  264aa828bbb8d3c18873eb1a46b906e6dcd632ee3239ba9ca0a5780a8b452d10
 
 depends_lib         port:libiconv \
                     port:ncurses \
