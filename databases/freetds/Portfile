@@ -30,8 +30,8 @@ master_sites        ftp://ftp.freetds.org/pub/${name}/stable
 
 distfiles           ${name}-${version}.tar.bz2
 
-checksums           rmd160  cf51cb9627813f425800df9198141d5d242f857a \
-                    sha256  310be6a9396a3de7a420f58219afacc13fb4f774ee6c70c06da903262db06ec2
+checksums           rmd160  1349ffec1225db39d2f7d1423b249c2707b7837a \
+                    sha256  3f23655da694f5cb116a722411cd98cff7e8161ca2988afca5221d5c2b942a83
 
 depends_lib         port:libiconv \
                     port:ncurses \
