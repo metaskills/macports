@@ -5,7 +5,7 @@ PortSystem          1.0
 
 name                freetds
 epoch               1
-version             1.0rc5
+version             1.00
 revision            1
 categories          databases
 platforms           darwin
@@ -26,12 +26,12 @@ long_description    FreeTDS is an open source implementation of the TDS (Tabular
                     portions of the JDBC 2 API.
 
 homepage            http://www.freetds.org/
-master_sites        ftp://ftp.freetds.org/pub/${name}/stable/release_candidates
+master_sites        ftp://ftp.freetds.org/pub/${name}/stable
 
 distfiles           ${name}-${version}.tar.bz2
 
-checksums           rmd160  bd37776dd66abff01cad27102dd346f0c9078a7c \
-                    sha256  eccef6720f94e444b5c9e299ae5f6bc35b1e51c17acffaacd8030c87e81fdcf5
+checksums           rmd160  be2c96de417e39f88c5d79a236b63f887313303f \
+                    sha256  5d617cc22855814815f815a2a1e354d91e674101ca08e55fbad3e51f14e61040
 
 depends_lib         port:libiconv \
                     port:ncurses \
